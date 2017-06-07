@@ -4,22 +4,23 @@
     <title>Poble Amigable SVC</title>
     <link rel='stylesheet' href='stylesheets/style.css' />
     <link rel="stylesheet" href="stylesheets/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" media="print" href="stylesheets/bootstrap.css" />
+    <link rel="stylesheet" href="stylesheets/ui-bootstrap-csp.css" />
+    <!--<link rel="stylesheet" type="text/css" media="print" href="stylesheets/bootstrap.css" />
     <link rel="stylesheet" type="text/css" media="print" href="stylesheets/ui-bootstrap-csp.css" />
     <link rel="stylesheet" type="text/css" media="print" href="stylesheets/print.css" />
-    <!--<link rel="icon" type="image/jpg" href="lib/img/pobleamigableLogo.jpg" />-->
+    <link rel="icon" type="image/jpg" href="lib/img/pobleamigableLogo.jpg" />-->
+
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular.min.js.map"></script>
-    <script src="lib/ui-bootstrap-tpls.js"></script>
     <script src="lib/angular-animate.js"></script>
     <script src="lib/angular-route.js"></script>
-  <header>
-    <img src="lib/img/logo.png"></img>
-    <h1><p>Pàgina institucional</h1></p>
+    <script src="lib/angular-sanitize.min.js"></script>
+    <script src="lib/ui-bootstrap-tpls.js"></script>
 
-  </header>
 
-  <body ng-app="SvcWeb" ng-controller="MainDefaultController" ng-init="initApp()">
+
+  <body ng-app="SvcWeb">
+  <div ng-controller="MainDefaultController">
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -29,26 +30,39 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">Ajuntament</a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li class="active"><a href="#">Municipi</a></li>
+              <li><a href="#">Actualitat</a></li>
+              <li><a href="#about">Serveis</a></li>
+              <li><a href="#contact">Seu-e</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </nav>
 
-      <div class="container">
 
-        <div class="starter-template">
-          <h1>Bootstrap starter template</h1>
-          <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        </div>
-  <footer class="footer">Plaça de l'Ajuntament, 10 - 08295 Sant Vicenç de Castellet | T. 936 930 611 - F. 936 930 610 - <strong>svcastellet@svc.cat</strong>.</footer>
-    <span class="center"><small>Amb la col·lavoració de:</small><img src="lib/img/gentGran.jpg"></img></span>
+        <section class="header">
+          <img src="lib/img/logo.png"></img>
+          <div class="carousel">
+            <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+              <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                <img ng-src="{{slide.image}}" style="margin:auto;"></img>
+                <div class="carousel-caption">
+                  <h4>Slide {{slide.id}}</h4>
+                  <p>{{slide.text}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      <div id="main">
+        <p class="lead">Queda un llarg camí pero tot es possoble...<br>Donem-l'hi canya!</p>
+        <footer class="footer">Plaça de l'Ajuntament, 10 - 08295 Sant Vicenç de Castellet | T. 936 930 611 - F. 936 930 610 - <strong>svcastellet@svc.cat</strong>.</footer>
+      </div>
   </body>
   <script src="javascripts/mainDefault.js"></script>
+
 </html>

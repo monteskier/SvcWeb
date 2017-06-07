@@ -1,7 +1,7 @@
 var express = require('express');
 var ObjectID = require('mongodb').ObjectID;
-var Post = require('../entity/posts.js');
-var User = require('../entity/user.js');
+var Post = require('../../entity/posts');
+var User = require('../../entity/user');
 var router = express.Router();
 
 /* GET users listing. */
@@ -17,10 +17,12 @@ router.get('/', function(req, res, next) {
 
       admin.findOne({username:"admin"}, function(err, user){
         if(err) throw err;
-        user.comparePassword('BladeRunner2019', function(err, isMatch){
-          if(err) throw err;
-          console.log('BLadeRunner2019')
-        });
+        if(user){
+          user.comparePassword('BladeRunner2019', function(err, isMatch){
+            if(err) throw err;
+            console.log('password:'+isMatch);
+          });
+        }
       });
   });
 

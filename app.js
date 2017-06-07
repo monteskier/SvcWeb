@@ -7,8 +7,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var moment = require('moment');//falta
 var fileUpload = require('express-fileupload');//falta
-var index = require('./routes/index');
-var admin = require('./routes/admin');
+var index = require('./routes/public/index');
+var admin = require('./routes/admin/index');
+var session = require('express-session');
 
 mongoose.connect('mongodb://localhost/SvcWeb');
 var app = express();

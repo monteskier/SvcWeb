@@ -1,11 +1,11 @@
 var mongoose = require("mongoose");
 var moment = require('moment');
-var Post = mongoose.Schema();
+var Schema = mongoose.Schema;
 
-var postSchema =  new Post({
+var postSchema =  new Schema({
   title:String,
   description: String,
-  username: { type: String, required: true, unique: true },
+  username: {type: String, required: true, unique: true },
   text:String,
   img:String,
   docs:String,
@@ -19,4 +19,4 @@ postSchema.methods.activate = function(){
 };
 
 var Post = mongoose.model('Post', postSchema);
-model.export = Post;
+module.export = Post;
