@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var mongoose = require('mongoose');//falta
+var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var moment = require('moment');//falta
@@ -39,7 +39,6 @@ app.use('/admin', admin);
 app.use(function(req,res,next){
   req.db = db;
   req.moment = moment;
-  req.mongoose = mongoose;
   next();
 });
 

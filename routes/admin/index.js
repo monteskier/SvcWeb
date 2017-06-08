@@ -5,17 +5,21 @@ var User = require('../../entity/user');
 var router = express.Router();
 
 /* GET users listing. */
+
 router.get('/', function(req, res, next) {
   var mongoose = req.mongoose;
   var admin = new User({
     username:"admin",
     password:"BladeRunner2019",
   });
+  admin.save(function(err, user){
+    if(err) console.log(err.message);
+    else{
+      console.log("s'ha dessat amb exit");
+    }
+  });
 
-  admin.save(function(err){
-      if(err) throw err;
-
-      admin.findOne({username:"admin"}, function(err, user){
+  User.findOne({username:"admin"}, function(err, user){
         if(err) throw err;
         if(user){
           user.comparePassword('BladeRunner2019', function(err, isMatch){
@@ -24,10 +28,7 @@ router.get('/', function(req, res, next) {
           });
         }
       });
-  });
-
-
-  res.send('respond with a resource');
+  res.send(res.json(admin));
 });
 
 module.exports = router;
