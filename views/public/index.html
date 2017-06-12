@@ -20,7 +20,8 @@
 
   <body ng-app="SvcWeb">
   <div ng-controller="MainDefaultController">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div id="main">
+    <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="seleccioController">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -41,8 +42,7 @@
           </div><!--/.nav-collapse -->
         </div>
       </nav>
-
-
+    <ng-view>
         <section class="header">
           <img src="lib/img/logo.png"></img>
           <div class="carousel">
@@ -57,11 +57,15 @@
             </div>
           </div>
       </section>
-      <div id="main">
-        <p class="lead">Queda un llarg camí pero tot es possoble...<br>Donem-l'hi canya!</p>
+    </ng-view>
+
         <footer class="footer">Plaça de l'Ajuntament, 10 - 08295 Sant Vicenç de Castellet | T. 936 930 611 - F. 936 930 610 - <strong>svcastellet@svc.cat</strong>.</footer>
       </div>
   </body>
   <script src="javascripts/mainDefault.js"></script>
-
+  <script src="javascripts/controllers/public/ajuntamentController.js"></script>
+  <script src="javascripts/controllers/public/municipiController.js"></script>
+  <script src="javascripts/controllers/public/serveisController.js"></script>
+  <script src="javascripts/controllers/public/actualitatController.js"></script>
+  <script src="javascripts/controllers/public/seueController.js"></script>
 </html>
