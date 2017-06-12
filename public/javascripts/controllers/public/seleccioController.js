@@ -1,6 +1,9 @@
 angular.module("SvcWeb")
-.controller("ajuntamentController", ['$scope', '$location', '$http', '$rootScope', '$timeout', function($scope, $location, $http, $rootScope, $timeout ){
+.controller("seleccioController", ['$scope', '$location', '$http', '$rootScope', '$timeout', function($scope, $location, $http, $rootScope, $timeout ){
 
+$scope.carregar = function(url){
+  $location.path("/"+url);
+};
 
 /*$scope.getPost = function(){
   var id = $rootScope.id;

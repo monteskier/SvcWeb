@@ -70,4 +70,31 @@ angularApp.controller('MainDefaultController', ['$scope', '$location', '$rootSco
 }]).config(['$locationProvider','$routeProvider', function($locationProvider, $routeProvider){
   'use strict';
   $locationProvider.html5Mode('true');
+
+  /*$routeProvider.when('/seleccio',{
+    templateUrl:"templates/public/seleccio.html",
+    controller:"public/detallController"
+  });*/
+
+  $routeProvider.when('/ajuntamentController',{
+    templateUrl:"templates/public/ajuntament/main.html",
+    controller:"public/ajuntamentController"
+  });
+
+  $routeProvider.when('/municipiController',{
+    templateUrl:"templates/public/municipi/main.html",
+    controller:"public/municipiController"
+  });
+
+  $routeProvider.when('/serveisController',{
+    templateUrl:"templates/public/serveis/main.html",
+    controller:"public/serveisController"
+  });
+
+  $routeProvider.when('/seueController',{
+    templateUrl:"templates/public/serveis/main.html",
+    controller:"public/seueController"
+  });
+
+
 }]);

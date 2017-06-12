@@ -1,7 +1,5 @@
 angular.module("SvcWeb")
-.controller("ajuntamentController", ['$scope', '$location', '$http', '$rootScope', '$timeout', function($scope, $location, $http, $rootScope, $timeout ){
-
-
+.controller("seueController", ['$scope', '$location', '$http', '$rootScope', '$timeout', function($scope, $location, $http, $rootScope, $timeout ){
 /*$scope.getPost = function(){
   var id = $rootScope.id;
   $http({
